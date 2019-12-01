@@ -49,10 +49,12 @@ public class Logout extends HttpServlet {
 		String utilizator_nume =(String) session.getAttribute("utilizator_nume");
 		
 		UtilizatorDaoImpl utilizator = new UtilizatorDaoImpl();
+		Utilizator util = new Utilizator();
+		if(!utilizator_nume.isEmpty()) {
+			util = new Utilizator(utilizator.selectUtilizator(utilizator_nume));
+		}
 		
-		Utilizator util = new Utilizator(utilizator.selectUtilizator(utilizator_nume));
-		
-		if(util.getRol_id() == 5 ) {
+		if(util.getRol_id() == 5 || util.getRol_id() == 0) {
 			response.sendRedirect("/produse_web/");
 			out.print("Te-ai deconectat cu succes!");
 			request.getSession().invalidate();

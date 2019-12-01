@@ -41,14 +41,9 @@ public class SelecteazaCategorie extends HttpServlet {
 		PrintWriter out =  response.getWriter();		
 		HttpSession session = request.getSession();
 		
-		
-		
 		int categorie_id =Integer.parseInt(request.getParameter("categorie_id")) ;
 		
 		session.setAttribute("categorie_id", categorie_id);
-		
-		
-
 		
 		request.getRequestDispatcher("angajati/produse.jsp").include(request,response);
 	}
