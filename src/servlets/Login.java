@@ -48,10 +48,14 @@ public class Login extends HttpServlet {
 		String parola = request.getParameter("utilizator_parola");
 		int categorie_id = 0;
 		
-		Utilizator util = new Utilizator(DbSelect.selectUtilizator(nume, parola));
-		session.setAttribute("utilizator_id", util.getUtilizator_id());
-		session.setAttribute("utilizator_nume", nume);
-		session.setAttribute("utilizator", util);
+		Utilizator util = new Utilizator();
+		if(!nume.isEmpty() || !parola.isEmpty() || (!nume.isEmpty() && !parola.isEmpty())) {
+			util = DbSelect.selectUtilizator(nume, parola);
+			session.setAttribute("utilizator_id", util.getUtilizator_id());
+			session.setAttribute("utilizator_nume", nume);
+			session.setAttribute("utilizator", util);
+		}
+		
 		session.setAttribute("categorie_id", categorie_id);
 		switch(util.getRol_id()) {
 			case 1: 
@@ -85,9 +89,6 @@ public class Login extends HttpServlet {
 		}
 		
 		out.close();
-
-
-		
 		
 	}
 
