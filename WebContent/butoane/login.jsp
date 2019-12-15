@@ -9,7 +9,7 @@
 		<input id="username" type="text" name="utilizator_nume" placeholder="Username"><br>
 		
 		<label for="password">Parola:</label>
-		<input id="password" type="password" name="utilizator_parola" placeholder="Password"><br><br>
+		<input style="margin-left: 20px;" id="password" type="password" name="utilizator_parola" placeholder="Password"><br><br>
 		  
 		<input type="submit" id="login" value="Log in" >
 		<input type="submit" value="Register" formaction="inregistrareClient/inregistrare.jsp"> 
