@@ -2,14 +2,11 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<%@ include file="/commons/head.jsp" %>
 <body>
 
-
-<h1>Administrare</h1>
+<%@ include file="/commons/header.jsp" %>
+<h1 class="text-center">Administrare</h1>
 
 <%@ include file="/workspace/inregistrareangajat.jsp" %>
 
