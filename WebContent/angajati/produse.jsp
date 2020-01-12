@@ -24,15 +24,15 @@
 		<div class="mb-3 col-8">
 			<h2>Produse</h2>
 			<div class="" >
-				<div class="row font-weight-bold text-center bg-info mb-3">
+				<div class="row font-weight-bold text-center bg-info mb-6">
 					<div class="col-1">Nr.</div>
-					<div class="col-3">Denumire</div>
+					<div class="col-2">Denumire</div>
 					<div class="col-1">Pret</div>
-					<div class="col-1">Cantitate</div>
+					<div class="col-2">Cantitate</div>
 					<div class="col-1">Garantie</div>
-					<div class="col-3">Descriere</div>
+					<div class="col-2">Descriere</div>
 					<div class="col-1">Cantitate</div>
-					<div class="col-1">Cos</div>
+					<div class="col-2">Cos</div>
 				</div>
 			
 				<% 
@@ -58,7 +58,7 @@
 						<div class="col-1"><% out.print(lista.getProdus_garantie());  %></div>
 						<div class="col-3"><% out.print(lista.getProdus_descriere_scurta());  %></div>	
 						<div class="col-1" ><input style="width: 70px;" type="number" name="produs_cantitate" min="1" value="1" max="<%=lista.getProdus_stoc() %>"></div>
-						<div class="col-1"><input type="submit" id="adaugaInCos" value="Add"></div>
+						<div class="col-1"><input style="background-color:#3c6382; color:#fad390;" type="submit" id="adaugaInCos" value="Add"></div>
 					</div>
 				</form>
 				<%
@@ -74,13 +74,13 @@
 							<form class="" action="/produse_web/AdaugaProdusInCos" method="post">
 								<div class="row mb-2">
 									<div class="col-1" ><input type="hidden" name="produs_id" value="<%=lista.getProdus_id()%>"><% out.print(lista.getProdus_id());  %></div>
-									<div class="col-3"><input type="hidden" name="produs_denumire" value="<%=lista.getProdus_nume()%>"><% out.print(lista.getProdus_nume());  %></div>		
+									<div class="col-2"><input type="hidden" name="produs_denumire" value="<%=lista.getProdus_nume()%>"><% out.print(lista.getProdus_nume());  %></div>		
 									<div class="col-1"><input type="hidden" name="produs_valoare" value="<%=lista.getProdus_pret() %>"><% out.print(lista.getProdus_pret());  %></div>
-									<div class="col-1"><% out.print(lista.getProdus_stoc());  %></div>
+									<div class="col-2"><% out.print(lista.getProdus_stoc());  %></div>
 									<div class="col-1"><% out.print(lista.getProdus_garantie());  %></div>
-									<div class="col-3"><% out.print(lista.getProdus_descriere_scurta());  %></div>	
+									<div class="col-2"><% out.print(lista.getProdus_descriere_scurta());  %></div>	
 									<div class="col-1"><input style="width: 70px;" type="number" name="produs_cantitate" min="1" value="1" max="<%=lista.getProdus_stoc() %>"></div>
-									<div class="col-1"><input type="submit" id="adaugaInCos" value="Add"></div>
+									<div class="col-2"><input type="submit" id="adaugaInCos" value="Add"></div>
 								</div>
 							</form>
 				<%
