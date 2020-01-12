@@ -1,10 +1,7 @@
 # exclude everything except directory src + pom/readme file + this
 /*
-!/build
 !/src
-!/target
 !/WebContent
 !/pom.xml
 !/README.md
 !/.gitignore
-/target/
