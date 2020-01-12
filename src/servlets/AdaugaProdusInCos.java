@@ -80,11 +80,6 @@ public class AdaugaProdusInCos extends HttpServlet {
 			}
 	 	}else cos.addProdusInCos(produs);
 		
-	 		
-		for(int i=0;i<cos.getLista().size();i++) {
-			out.print(cos.getLista().get(i));
-		}
-		
 		session.setAttribute("cos", cos);
 		/*
 		out.print("<div class='container'> <strong>"+nume+"</strong>");

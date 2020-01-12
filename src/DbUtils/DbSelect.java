@@ -240,7 +240,8 @@ public class DbSelect {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "select Utilizator, Data, Suma, Plata, Status, ID  from vizualizare_comanda  where Status = ?";
+		String query = "select comanda_id, utilizator_id, sum, modalitate_plata, status_comanda, data, c.cantitate "
+				+ "from comanda, continutcomanda c  where c.comanda_id = comdanda.comanda_id and status_comanda = ?";
 		
 		try {
 			con = Dbutil.getConnection();
